@@ -1,0 +1,86 @@
+---
+title: "ISLR Chapter 2 Exercises"
+author: "Due West"
+date: "January 27, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Conceptual
+
+### *Exercise 1*
+1.a. **Flexible Better** If sample size has large *n* with small *p*, then variance is low and bias is high; therefore, more flexible method is preferred.
+
+1.b. **Flexible Worse** If sample size has small *n* with large *p*, then variance is high and bias is low; therefore, less flexible method is preferred.
+
+1.c. **Flexible Better** If the relationship between predictors and response is highly non-linear, then variance is high; therefore more flexible method is preferred.
+
+1.d. **Flexible Worse** If variance of error terms (irreducible error) is extremely high, then bias is high; therefore less flexible method is preferred.
+
+### *Exercise 2*
+2.a. **Regression**; **Inference**; *n* = 500; *p* = 3
+
+2.b. **Classification**; **Prediction**; *n* = 20; *p* = 13
+
+2.c. **Regression**; **Prediction**; *n* = 52; *p* = 3
+
+### *Exercise 3*
+3.a. *see ISLR Chapter 2 - Exercise 3a.jpg* 
+
+3.b. **Bias** refers to the error that is introduced by approximating a real-life problem, which may be extremely complicated, by a much simpler model. Therefore, bias decreases as method flexibility increases.
+     **Variance** refers to the amount by which the predicted result would change if we we estimated using a different training set. Low variance indicates that the statistical learning methods fits the training data set. Therefore, variance increases as method flexibility increases.
+     **Training Error** decreases as method flexibility increases which may reflect over-fitting the data.
+     **Test Error** increases as method flexibility increases when over-fitting has occurred. It is generally expected that Test Error will be greater than Training Error since the training data was used to fit the method.
+     **Bayes (Irreducable) Error** remains flat as flexibility increases as this is the error that cannot accounted for by the method.
+
+### *Exercise 4*
+4.a. Describe 3 real-life application in which *classification* might be useful:
+
+**Classification Example 1** Predict if a student in high school will attend college based upon student GPA, number of advanced courses, family income, extra curricular activities
+
+**Classification Example 2** Predict if it will rain or not in a specified location based upon the prior day's barometric pressure change, precipitation, and temperature change at that location
+
+**Classification Example 3** Predict if a customer will buy a product or not based upon previous purchases during the past 6 months, response to marketing, customer gender, age, and income
+
+4.b. Describe 3 real-life applications in which *regression* might be useful:
+
+**Regression Example 1** Predict the number of students in high school that will attend college based upon average student GPA, enrollment in advanced courses, average income of families, enrollment in extra curricular activities
+
+**Regression Example 2** Predict the number of days until a part fails based upon the hours used per day, routine maintenance performed, operating conditions such as temperature and humidity
+
+**Regression Example 3** Predict the number of traffic fatalities per year based upon population, miles of available roadway, mass transit alternatives, traffic violations, money spent on public education/awareness
+
+4.c. Describe three real-life applications in which *cluster analysis* might be useful:
+
+**Cluster Analysis Example 1** Using demographic (age, sex, race, education, marital status, number of children, etc.) and geographic (distance from healthcare provider) of Medicaid clients, try to identify clusters of clients by factors that affect use of preventative care services (i.e. well checks and immunizations)
+
+**Cluster Analysis Example 2** Using demographic (age, sex, race, education, marital status, number of children, etc.) and job information (salary range, type of work, years in job), try to identify clusters of employees that value a particular company benefit (401K match, ESPP, additional days of PTO, flexible work arrangements).
+
+**Cluster Analysis Example 3** Using voter turnout by state and most referenced political topics in social media, try to identify clusters of voters by geography that voted in response to hot political topics.
+
+### Exercise 5
+5.a. The **advantage of very flexible approach** is the ability to more accurately fit a highly complex and non-linear relationship to predict an outcome. The **disadvantage of a very flexible approach** is the risk of over-fitting the observed data when a less flexible and more linear method would more accurately predict the results. A **more flexible approach is preferred** when when the actual relationship is truly non-linear and there is an ample number of training observations. A **less flexible approach is preferred** when the actual relationship is more linear and/or there are a limited number of training observations.
+
+### Exercise 6
+6.a. A **parametric** stastical learning approach involve a two-step model-based approach of (1) making an assumption about the functional form (or shape) of *f* to select an appropriate model (i.e. linear model), and then (2) estimating the parameters from the available data needed to appropriately *fit* or *train* the model. A **non-parametric** approach does not make explicit assumptions about the form of *f* and attempt to use all available data to estimate *f* as close as possible. The **benefit of a parametric approach** is that it simplifies the problem of estimating *f* because it is generally easier to estimate a set of parameters. The **disadvantage of a parametric approach** is that the model we choose may not match the true form of *f*. The **disadvantage of a non-parametric approach** is the increase complexity of estimating *f* and the risk of overfitting the training data set and not accurately predicting true *f*.
+
+### Exercise 7
+7.a. Euclidean distance between each observation and test point, X_1 = X_2 = X_3 = 0:
+
+| Obs | $$X_1$$ | $$X_2$$ | $$X_3$$ | $$Y$$ | Euc Dist |
+|:--|--:|--:|--:|:---:|-------:|
+| 1 | 0 | 3 | 0 | Red | 3.00 |
+| 2 | 2 | 0 | 0 | Red | 2.00 |
+| 3 | 0 | 1 | 3 | Red | 3.16 |
+| 4 | 0 | 1 | 2 | Green | 2.24 |
+| 5 | -1 | 0 | 1 | Green | 1.41 |
+| 6 | 1 | 1 | 1 | Red | 1.73 | 
+
+7.b. Prediction when *K* = 1: Green, because 1 of 1 observations (Obs 5) is Green
+
+7.c. Prediction when *K* = 3: Red, because 2 of 3 observations (Obs 5, 6, 2) are Red
+
+7.d. If the **Bayes decision boundary is highly non-linear**, then a **smaller *K* value is preferred** because a more flexible method will more accurately predict the classification of the selected point.

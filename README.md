@@ -12,6 +12,8 @@ RStudio installs packages in a user library directory, which is synched to compa
 
 For RStudio to automatically recognize this new library, create a new user varaiable using the Control Panel:
 
-`Control Panel > User Accounts`
-`Change my environment variables > Add user varable`
-`R_LIBS_USER = C:/Program Files/R/win-library/3.5`
+---
+Control Panel > User Accounts
+Change my environment variables > Add user varable
+R_LIBS_USER = C:/Program Files/R/win-library/3.5
+---

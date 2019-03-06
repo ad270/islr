@@ -2,7 +2,9 @@
 title: "ISLR Chapter 2 Exercises"
 author: "Due West"
 date: "January 27, 2019"
+github: {user: ad270, repo: islr, branch: "gh-pages"}
 output: html_document
+
 ---
 
 ```{r setup, include=FALSE}
@@ -84,3 +86,32 @@ knitr::opts_chunk$set(echo = TRUE)
 7.c. Prediction when *K* = 3: Red, because 2 of 3 observations (Obs 5, 6, 2) are Red
 
 7.d. If the **Bayes decision boundary is highly non-linear**, then a **smaller *K* value is preferred** because a more flexible method will more accurately predict the classification of the selected point.
+
+### Exercise 8
+#### Load and Prep Data
+```{r}
+# Data sets can be downloaded from http://www.statlearning.com
+College = read.csv("data/College.csv", header = TRUE, sep = ",", na.strings = "?")
+rownames(College)=College[,1]
+College=College[,-1]
+```
+
+#### View Data Summary
+```{r}
+summary(College)
+```
+
+#### View Scatterplot of First Ten Columns
+```{r}
+pairs(College[,1:10])
+```
+
+#### Plot Out-of-State Tuition for Public vs. Private Colleges
+```{r}
+plot(College$Private, College$Outstate, 
+     main = "Out-of-State Tuition - Public vs. Private Colleges", 
+     xlab = "Private College", 
+     ylab = "Tuition")
+```
+
+

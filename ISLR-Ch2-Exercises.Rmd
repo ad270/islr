@@ -127,7 +127,7 @@ summary(College$Elite)
 ```{r}
 plot(College$Elite, College$Outstate, 
      main = "Out-of-State Tuition - Non-Elite vs. Elite Colleges",
-     sub = "Elite colleges have more than 50% of new students from top 10% of high school class",
+     sub = "Elite colleges have more than 50% of new students from the top 10% of high school class",
      cex.sub = 0.75,
      xlab = "Elite", 
      ylab = "Tuition")

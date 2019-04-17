@@ -133,4 +133,36 @@ plot(College$Elite, College$Outstate,
      ylab = "Tuition")
 ```
 
+#### Explore College Expenses using Histograms
+```{r}
+par(mfrow=c(2,2))
+hist(College$Expend, 
+     main = "Instructional Expenses",
+     xlab = "Dollars ($)",
+     ylab = "# of Colleges",
+     ylim = c(0,500),
+     las = 1)
+hist(College$Room.Board, 
+     main = "Room & Board Costs",
+     xlab = "Dollars ($)",
+     ylab = "# of Colleges",
+     ylim = c(0,500),
+     las = 1)
+hist(College$Books, 
+     main = "Book Costs",
+     xlab = "Dollars ($)",
+     ylab = "# of Colleges",
+     ylim = c(0,500),
+     las = 1)
+hist(College$Personal, 
+     main = "Personal Expenses",
+     xlab = "Dollars ($)",
+     ylab = "# of Colleges",
+     ylim = c(0,500),
+     las = 1)
+```
 
+8.c.vi. Summary of findings: 
+
+  * **Instructional Expenses** make up the largest portion of college costs followed by **Room & Board**.  
+  * While expenses can vary greatly by college and student, an average expectation for *total expenses* is about **$13,500**.  
